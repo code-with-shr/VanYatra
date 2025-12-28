@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VanYatra - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/images/bground.jpg') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: rgba(0,0,0,0.6);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-top: 70px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 260px;
+            height: 180px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(6px);
+            border-radius: 15px;
+            text-align: center;
+            padding: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .card:hover {
+            background: rgba(255,255,255,0.45);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>VanYatra</h2>
+    <div>
+        <a href="/home">Home</a>
+        <a href="/my-rides">My Rides</a>
+        <a href="/drivers">Drivers</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<h1 class="heading">Welcome to VanYatra</h1>
+
+<div class="container">
+    <div class="card" onclick="location.href='/book-ride'">
+        🚗 Book Ride
+    </div>
+
+    <div class="card" onclick="location.href='/my-rides'">
+        📄 My Rides
+    </div>
+
+    <div class="card" onclick="location.href='/drivers'">
+        🧑‍✈️ Drivers
+    </div>
+
+    <div class="card" onclick="location.href='/profile'">
+        👤 Profile
+    </div>
+</div>
+
+</body>
+</html>

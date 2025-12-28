@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | VanYatra</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('/images/istockphoto.jpg') no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* glass card */
+.contact-box{
+    width:90%;
+    max-width:600px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:40px 35px;
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    text-align:center;
+}
+
+/* heading */
+.contact-box h2{
+    font-size:36px;
+    margin-bottom:25px;
+    color:#ff9f43;
+}
+
+/* form inputs */
+.contact-box input, .contact-box textarea{
+    width:100%;
+    padding:12px 15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+/* submit button */
+.contact-box button{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff9f43;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.contact-box button:hover{
+    background:#ff7a00;
+    transform:scale(1.05);
+}
+
+/* back button */
+.back-btn{
+    margin-top:25px;
+}
+
+.back-btn a{
+    text-decoration:none;
+    padding:12px 28px;
+    background:#ff9f43;
+    color:#fff;
+    font-size:16px;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.back-btn a:hover{
+    background:#ff7a00;
+    transform:scale(1.05);
+}
+
+/* responsive */
+@media(max-width:768px){
+    .contact-box{
+        width:95%;
+        padding:30px 20px;
+    }
+    .contact-box h2{
+        font-size:28px;
+    }
+    .contact-box button, .back-btn a{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="contact-box">
+    <h2>Contact Us</h2>
+
+    <form action="/contact" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="back-btn">
+        <a href="/dashboard">← Back to Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

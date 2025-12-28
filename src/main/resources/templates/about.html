@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | VanYatra</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('/images/istockphoto.jpg') no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* glass card */
+.about-box{
+    width:70%;
+    max-width:900px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:45px 55px;
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    text-align:center;
+}
+
+/* heading */
+.about-box h1{
+    font-size:40px;
+    margin-bottom:25px;
+    color:#ff9f43;
+}
+
+/* text */
+.about-box p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:18px;
+    color:#f1f1f1;
+}
+
+/* button */
+.back-btn{
+    margin-top:30px;
+}
+
+.back-btn a{
+    text-decoration:none;
+    padding:14px 38px;
+    background:#ff9f43;
+    color:#fff;
+    font-size:16px;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.back-btn a:hover{
+    background:#ff7a00;
+    transform:scale(1.05);
+}
+
+/* responsive */
+@media(max-width:768px){
+    .about-box{
+        width:90%;
+        padding:30px;
+    }
+    .about-box h1{
+        font-size:30px;
+    }
+    .about-box p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="about-box">
+    <h1>About VanYatra</h1>
+
+    <p>
+        VanYatra is a smart and reliable ride booking platform designed to make
+        daily and long-distance travel easy, affordable, and comfortable.
+    </p>
+
+    <p>
+        Our mission is to connect passengers with trusted drivers and ensure
+        safe rides through transparent pricing and a smooth booking experience.
+    </p>
+
+    <p>
+        Whether you need a Van, Auto, or Car — VanYatra helps you book rides
+        quickly with just a few clicks.
+    </p>
+
+    <div class="back-btn">
+        <a href="/dashboard">← Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

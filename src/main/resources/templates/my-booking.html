@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Rides | VanYatra</title>
+
+<style>
+/* ===== Fixed Background ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* ❌ page scroll band */
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('/images/istockphoto.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== Page Wrapper ===== */
+.page {
+    width: 80%;
+    margin: 40px auto;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Heading ===== */
+h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #ffb562;
+    margin-bottom: 20px;
+}
+
+/* ===== Scrollable Cards Area ===== */
+.rides-scroll {
+    flex: 1;
+    overflow-y: auto; /* ✅ only cards scroll */
+    padding-right: 12px;
+}
+
+/* Scrollbar style */
+.rides-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+.rides-scroll::-webkit-scrollbar-thumb {
+    background: #ff9f43;
+    border-radius: 10px;
+}
+
+/* ===== Grid Layout ===== */
+.rides-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* ===== Ride Card ===== */
+.ride-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(14px);
+    padding: 22px;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.ride-card h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.ride-card p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+/* ===== Status ===== */
+.status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 16px;
+    background: #ff9f43;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back-btn a {
+    text-decoration: none;
+    padding: 12px 34px;
+    background: #ff9f43;
+    color: #fff;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.back-btn a:hover {
+    background: #ff7f00;
+}
+
+/* ===== No Rides ===== */
+.no-rides {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+    .rides-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+    <h2>My Rides</h2>
+
+    <!-- Scrollable Cards -->
+    <div class="rides-scroll">
+        <div class="rides-grid">
+            <div class="ride-card" th:each="ride : ${rides}">
+                <h3 th:text="${ride.pickup} + ' → ' + ${ride.dropLocation}"></h3>
+                <p>Date: <span th:text="${ride.date}"></span></p>
+                <p>Time: <span th:text="${ride.time}"></span></p>
+                <p>Vehicle: <span th:text="${ride.vehicleType}"></span></p>
+                <span class="status">Booked</span>
+            </div>
+        </div>
+
+        <p class="no-rides" th:if="${#lists.isEmpty(rides)}">
+            No rides booked yet 🚗
+        </p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-btn">
+        <a th:href="@{/dashboard}">← Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>
